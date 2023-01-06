@@ -47,13 +47,15 @@ public class UploadServlet extends HttpServlet {
                     } // Process names of uploading files
                     else if (!fi.getName().isEmpty()) {
                         // Intercept the file name from the upload file path sent by the client
-                        fileName = fi.getName().substring(fi.getName().lastIndexOf("\\") + 1);
+                        fileName = fi.getName().substring(fi.getName().lastIndexOf(File.separator) + 1);
                     }
                     // Start to save uploaded files
                     if(!fileName.isEmpty()) {
-                        File file = new File(fileName);
+                        String newPath = System.getProperty("user.home") + File.separator + fileName;
+                        File file = new File(newPath);
                         fi.write(file);
                         pw.println("El archivo se ha escrito correctamente en: " + fileName);
+                        System.out.println("Saved to " + newPath);
                     }
                 }
             } catch (Exception ex) {
