@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FileUploaderClient</string>
+    <string name="input_your_target_web_address">Input your target web address</string>
+    <string name="please_select_the_file_you_want_to_upload">Please select the File you want to upload</string>
+    <string name="choose_file">Choose File</string>
+    <string name="upload_to_server">Upload to Server</string>
+</resources>
